@@ -1,0 +1,25 @@
+package com.mtcoding.boardproject.domain.reply;
+
+import com.mtcoding.boardproject.domain.board.Board;
+import com.mtcoding.boardproject.domain.user.User;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@NoArgsConstructor
+@Table(name = "reply_tb")
+@Entity
+public class Reply {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    private String comment;  // 댓글 내용
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Board board;
+}

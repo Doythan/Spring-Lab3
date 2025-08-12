@@ -28,8 +28,6 @@
         <!-- 댓글등록 -->
         <div class="card-body">
             <form action="/reply/save" method="post">
-                <!-- 리다이렉트용 boardId 전송 -->
-                <input type="hidden" name="id" value="{{model.id}}">
                 <textarea class="form-control" rows="2" name="comment"></textarea>
                 <div class="d-flex justify-content-end">
                     <button type="submit" class="btn mt-1" style="background-color: #999AA0; color: white;">
@@ -53,8 +51,6 @@
                         <div>{{comment}}</div>
                     </div>
                     <form action="/reply/{{replyId}}/delete" method="post">
-                        <!-- 리다이렉트용 boardId 전송 -->
-                        <input type="hidden" name="boardId" value="{{model.id}}">
                         <button class="btn">🗑</button>
                     </form>
                 </div>
@@ -64,5 +60,6 @@
     </div>
 
 </div>
+
 
 {{>layout/footer}}

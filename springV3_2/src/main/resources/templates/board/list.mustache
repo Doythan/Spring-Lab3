@@ -1,0 +1,8 @@
+{{>layout/header}}
+<h2>Board List</h2>
+<ul>
+    {{#boards}}
+        <li><a href="/board/{{id}}">{{title}}</a> by {{username}}</li>
+    {{/boards}}
+</ul>
+{{>layout/footer}}
